@@ -22,45 +22,45 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script> 
     <script> 
     function wrapWindowByMask(){
-        //È­¸éÀÇ ³ôÀÌ¿Í ³Êºñ¸¦ ±¸ÇÑ´Ù.
+        //í™”ë©´ì˜ ë†’ì´ì™€ ë„ˆë¹„ë¥¼ êµ¬í•œë‹¤.
         var maskHeight = $(document).height();  
         var maskWidth = $(window).width();  
 
-        //¸¶½ºÅ©ÀÇ ³ôÀÌ¿Í ³Êºñ¸¦ È­¸é °ÍÀ¸·Î ¸¸µé¾î ÀüÃ¼ È­¸éÀ» Ã¤¿î´Ù.
+        //ë§ˆìŠ¤í¬ì˜ ë†’ì´ì™€ ë„ˆë¹„ë¥¼ í™”ë©´ ê²ƒìœ¼ë¡œ ë§Œë“¤ì–´ ì „ì²´ í™”ë©´ì„ ì±„ìš´ë‹¤.
         $('#mask').css({'width':maskWidth,'height':maskHeight});  
 
-        //¾Ö´Ï¸ÞÀÌ¼Ç È¿°ú - ÀÏ´Ü 1ÃÊµ¿¾È ±î¸Ä°Ô µÆ´Ù°¡ 80% ºÒÅõ¸íµµ·Î °£´Ù.
+        //ì• ë‹ˆë©”ì´ì…˜ íš¨ê³¼ - ì¼ë‹¨ 1ì´ˆë™ì•ˆ ê¹Œë§£ê²Œ ëë‹¤ê°€ 80% ë¶ˆíˆ¬ëª…ë„ë¡œ ê°„ë‹¤.
         $('#mask').fadeIn(1000);      
         $('#mask').fadeTo("slow",0.8);    
 
-        //À©µµ¿ì °°Àº °Å ¶ç¿î´Ù.
+        //ìœˆë„ìš° ê°™ì€ ê±° ë„ìš´ë‹¤.
         $('.window').show();
     }
 
     $(document).ready(function(){
-        //°ËÀº ¸· ¶ç¿ì±â
+        //ê²€ì€ ë§‰ ë„ìš°ê¸°
         $('.openMask').click(function(e){
             e.preventDefault();
             wrapWindowByMask();
         });
 
-        //´Ý±â ¹öÆ°À» ´­·¶À» ¶§
+        //ë‹«ê¸° ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ
         $('.window .close').click(function (e) {  
-            //¸µÅ© ±âº»µ¿ÀÛÀº ÀÛµ¿ÇÏÁö ¾Êµµ·Ï ÇÑ´Ù.
+            //ë§í¬ ê¸°ë³¸ë™ìž‘ì€ ìž‘ë™í•˜ì§€ ì•Šë„ë¡ í•œë‹¤.
             e.preventDefault();  
             $('#mask, .window').hide();  
         });       
 
-        //°ËÀº ¸·À» ´­·¶À» ¶§
+        //ê²€ì€ ë§‰ì„ ëˆŒë €ì„ ë•Œ
         $('#mask').click(function () {  
             $(this).hide();  
             $('.window').hide();  
         });   
 		
-		// ÅÍÄ¡ ½ºÅ©¸°¿¡¼­ ½Ç¼ö·Î ·¹ÀÌ¾î¸¦ ´Ý´Â °æ¿ì¸¦ ¸·À¸·Á¸é.
+		// í„°ì¹˜ ìŠ¤í¬ë¦°ì—ì„œ ì‹¤ìˆ˜ë¡œ ë ˆì´ì–´ë¥¼ ë‹«ëŠ” ê²½ìš°ë¥¼ ë§‰ìœ¼ë ¤ë©´.
 		$('#mask').one('touchstart', function () {  
 			$(this).unbind('click');
-			alert('ÅÍÄ¡ ÀÌº¥Æ®ÀÏ ¶§´Â ¾Æ¹« ÀÏµµ ¾È ÀÏ¾î³­´Ù.');
+			alert('í„°ì¹˜ ì´ë²¤íŠ¸ì¼ ë•ŒëŠ” ì•„ë¬´ ì¼ë„ ì•ˆ ì¼ì–´ë‚œë‹¤.');
 		});
     });
     </script> 
@@ -68,8 +68,8 @@
 <body> 
     <div id="mask"></div> 
     <div class="window"> 
-        <input type="button" href="#" class="close" value="³ª´Â¾ß ´Ý±â ¹öÆ°(.window .close)"/> 
+        <input type="button" href="#" class="close" value="ë‚˜ëŠ”ì•¼ ë‹«ê¸° ë²„íŠ¼(.window .close)"/> 
     </div> 
-    <a href="#" class="openMask">°ËÀº ¸· ¶ç¿ì±â</a> 
+    <a href="#" class="openMask">ê²€ì€ ë§‰ ë„ìš°ê¸°</a> 
 </body> 
 </html>
