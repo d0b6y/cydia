@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+$(function(){
+	$('#menu1').click(function(){
+		$.ajax({
+			url:'a.html',
+			dataType:'html',
+			success: function(data){
+				$('message1'.html(data);
+			}
+		});
+		return false;
+	});
+
+	$('#menu2').click(function(){
+		$.ajax({
+			url:'a.html',
+			dataType:'html',
+			success: function(data){
+				$('message2'.html($(data).find('li'));
+			}
+		});
+		return false;
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div>
+	<a href="#" id="menu1">show1</a><p>
+	<span id="message1"></span>
+</div>
+
+<div>
+	<a href="#" id="menu2">show2</a><p>
+	<span id="message2"></span>
+</div>
+
+</body>
+</html>
